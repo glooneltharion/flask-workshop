@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 2% 10%;
+  background: url(../img/topography.png);
+}
+
+::-moz-selection {
+  background: mediumpurple;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: mediumpurple;
+  color: #fff;
+  text-shadow: none;
+}
+
+table {
+  border-radius: 10px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: mediumpurple;
+}
+
+a:hover {
+  color: #7e55d4;
+}
+
+.form-control:focus {
+  color: #343a40;
+  background-color: #fff;
+  border-color: mediumpurple;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(157, 126, 222, 0.25);
+}
+
+.btn-primary {
+  background-color: mediumpurple;
+  border-color: mediumpurple;
+}
+
+.btn-primary:hover {
+  background-color: #7e55d4;
+  border-color: #7e55d4;
+}
+
+h1 {
+  color: mediumpurple;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+tr th {
+  text-transform: uppercase;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 2% 10px;
+  }
+}

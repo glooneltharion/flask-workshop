@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO APP</title>
+{% endblock %}
+
+{% block body %}
+  <h1>Create new TODO:</h1>
+
+  <form action="{{ url_for('create') }}" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Please, enter title for the task.">
+    </div>
+    <div class="form-group">
+      <label for="desc">Description:</label>
+      <input type="text" class="form-control" id="desc" name="description" placeholder="Please, enter description for the task.">
+    </div>
+    <div class="form-group">
+      <label for="date">Due date:</label>
+      <input type="date" class="form-control" id="date" name="date">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+
+  <h1>Hello {{ name }}, check your TODOS</h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Due date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+      <tr>
+        <td>{{ todo[0] }}</td>
+        <td>{{ todo[1] }}</td> {# Access the tuple directly #}
+        <td>{{ todo[2] }}</td>
+        <td>{{ todo[3] }}</td>
+        <td>
+          <a href="{{ url_for('delete', todo_id=todo[0]) }}"><i class="fas fa-check"></i></a>
+        </td>
+        <td>
+          <a href="{{ url_for('update', todo_id=todo[0]) }}"><i class="fas fa-pencil-alt"></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

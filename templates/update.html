@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO APP || UPDATE TODO</title>
+{% endblock %}
+
+{% block body %}
+
+<h1>Update todo with title: {{ todo[1] }}</h1>
+  <form action="{{ url_for('update', todo_id=todo[0]) }}" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ todo[1] }}">
+    </div>
+    <div class="form-group">
+      <label for="desc">Description:</label>
+      <input type="text" class="form-control" id="desc" name="description" value="{{ todo[2] }}">
+    </div>
+    <div class="form-group">
+      <label for="date">Due date:</label>
+      <input type="date" class="form-control" id="date" name="date" value="{{ todo[3] }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+{% endblock %}
